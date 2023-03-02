@@ -14,6 +14,27 @@ function getboard(boardId) {
   });
 }
 
+function getswimlane(swimlaneId) {
+  const swimlane = spawn('node', ['swimlane.js', swimlaneId]);
+  swimlane.stdout.on('data', (data) => {
+    console.log(`swimlane: ${data}`);
+  });
+}
+
+function getlist(listId) {
+  const list = spawn('node', ['list.js', listId]);
+  list.stdout.on('data', (data) => {
+    console.log(`list: ${data}`);
+  });
+}
+
+function getcard(cardId) {
+  const card = spawn('node', ['card.js', cardId]);
+  card.stdout.on('data', (data) => {
+    console.log(`card: ${data}`);
+  });
+}
+
 async function run() {
   try {
     await client.connect();
@@ -24,6 +45,9 @@ async function run() {
     const filerecord = await filerecords.findOne(query, options);
     console.log('filerecord:', filerecord, ',');
     getboard(filerecord.boardId);
+    getswimlane(filerecord.swimlaneId);
+    getlist(filerecord.listId);
+    getcard(filerecord.cardId);
   } finally {
     await client.close();
   }

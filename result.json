@@ -1,0 +1,167 @@
+file:  {
+  _id: 63ff7cd4c4ea570001fa77c9,
+  filename: 'ChatGPT_Clippy.png',
+  contentType: 'image/png',
+  length: 490559,
+  chunkSize: 2097152,
+  uploadDate: 2023-03-01T16:27:00.293Z,
+  aliases: [ 'ChatGPT_Clippy.png' ],
+  metadata: null,
+  md5: '7a86058a0abcc7c13c3cef7aee674f3d'
+} ,
+filerecord: {
+  _id: 'e3MXRj4oec7TPcuDy',
+  original: { name: 'ChatGPT_Clippy.png', size: 490559, type: 'image/png' },
+  boardId: 'i5r8gqruPz3iERx35',
+  swimlaneId: 'kJTxznDhHaM7RjKou',
+  listId: 'TaArqqNGGFpWjGQgj',
+  cardId: 'XPZ4ho5bggP9FZWy5',
+  userId: 'cLKyievM4aLz7pYgy',
+  uploadedAt: 2023-03-01T16:27:00.228Z,
+  copies: {
+    attachments: {
+      name: 'ChatGPT_Clippy.png',
+      type: 'image/png',
+      size: 490559,
+      key: '63ff7cd4c4ea570001fa77c9',
+      updatedAt: 2023-03-01T16:27:00.293Z,
+      createdAt: 2023-03-01T16:27:00.293Z
+    }
+  }
+} ,
+
+swimlane: {
+  _id: 'kJTxznDhHaM7RjKou',
+  title: 'Default',
+  boardId: 'i5r8gqruPz3iERx35',
+  archived: false,
+  createdAt: 2023-03-01T15:37:37.413Z,
+  updatedAt: 2023-03-01T15:37:37.480Z,
+  modifiedAt: 2023-03-01T15:37:37.480Z,
+  type: 'swimlane',
+  sort: 0
+}
+
+
+card: {
+  _id: 'XPZ4ho5bggP9FZWy5',
+  title: 'Joo',
+  members: [],
+  labelIds: [],
+  customFields: [],
+  listId: 'TaArqqNGGFpWjGQgj',
+  boardId: 'i5r8gqruPz3iERx35',
+  sort: 0,
+  swimlaneId: 'kJTxznDhHaM7RjKou',
+  type: 'cardType-card',
+  cardNumber: 1,
+  archived: false,
+  parentId: '',
+  coverId: 'e3MXRj4oec7TPcuDy',
+  createdAt: 2023-03-01T15:38:01.035Z,
+  modifiedAt: 2023-03-01T16:27:00.060Z,
+  dateLastActivity: 2023-03-01T16:27:00.060Z,
+  description: '',
+  requestedBy: '',
+  assignedBy: '',
+  assignees: [],
+  spentTime: 0,
+  isOvertime: false,
+  userId: 'cLKyievM4aLz7pYgy',
+  subtaskSort: -1,
+  linkedId: '',
+  vote: {
+    question: '',
+    positive: [],
+    negative: [],
+    end: null,
+    public: false,
+    allowNonBoardMembers: false
+  },
+  poker: {
+    question: false,
+    one: [],
+    two: [],
+    three: [],
+    five: [],
+    eight: [],
+    thirteen: [],
+    twenty: [],
+    forty: [],
+    oneHundred: [],
+    unsure: [],
+    end: null,
+    allowNonBoardMembers: false
+  },
+  targetId_gantt: [],
+  linkType_gantt: [],
+  linkId_gantt: []
+}
+
+
+board: {
+  _id: 'i5r8gqruPz3iERx35',
+  title: 'Test',
+  permission: 'private',
+  slug: 'test',
+  archived: false,
+  createdAt: 2023-03-01T15:37:37.402Z,
+  modifiedAt: 2023-03-01T15:37:37.403Z,
+  stars: 0,
+  members: [
+    {
+      userId: 'cLKyievM4aLz7pYgy',
+      isAdmin: true,
+      isActive: true,
+      isNoComments: false,
+      isCommentOnly: false,
+      isWorker: false
+    }
+  ],
+  color: 'belize',
+  subtasksDefaultBoardId: null,
+  subtasksDefaultListId: null,
+  dateSettingsDefaultBoardId: null,
+  dateSettingsDefaultListId: null,
+  allowsSubtasks: true,
+  allowsAttachments: true,
+  allowsChecklists: true,
+  allowsComments: true,
+  allowsDescriptionTitle: true,
+  allowsDescriptionText: true,
+  allowsCardNumber: false,
+  allowsActivities: true,
+  allowsLabels: true,
+  allowsCreator: true,
+  allowsAssignee: true,
+  allowsMembers: true,
+  allowsRequestedBy: true,
+  allowsCardSortingByNumber: true,
+  allowsAssignedBy: true,
+  allowsReceivedDate: true,
+  allowsStartDate: true,
+  allowsEndDate: true,
+  allowsDueDate: true,
+  presentParentTask: 'no-parent',
+  isOvertime: false,
+  type: 'board',
+  sort: 0
+}
+
+
+list: {
+  _id: 'TaArqqNGGFpWjGQgj',
+  title: 'Hep',
+  boardId: 'i5r8gqruPz3iERx35',
+  sort: 0,
+  type: 'list',
+  starred: false,
+  archived: false,
+  swimlaneId: '',
+  createdAt: 2023-03-01T15:37:42.454Z,
+  updatedAt: 2023-03-01T15:37:42.454Z,
+  modifiedAt: 2023-03-01T15:37:42.431Z,
+  wipLimit: { value: 1, enabled: false, soft: false }
+}
+
+

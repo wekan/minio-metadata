@@ -24,9 +24,9 @@ async function run(collection, query, options) {
     await cursor.forEach(attachment => {
       //console.log(attachment);
       //const filerecord = toka(attachment._id);
-      const filerecord = getfilerecord(attachment);
       //attachment.filerecord = filerecord;
-      console.log("file: ", attachment, ",");
+      console.log("{ file: ", attachment, ",");
+      getfilerecord(attachment);
       //const board = getboard
 
 /*
