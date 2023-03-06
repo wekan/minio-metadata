@@ -2,7 +2,14 @@
 
 ## Introduction
 
-- TLDR: Bash scripts to transfer attachment and avatar files from MongoDB GridFS to Minio file server, using below CLI commands
+- TLDR:
+  - Bash scripts to transfer attachment and avatar files from MongoDB GridFS to Minio file server, using below CLI commands.
+- Why:
+  - To make MongoDB Server database size smaller (like from 800 GB to 10 GB), store files elsewhere, and have files visible in WeKan
+  - It is very slow to backup 800 GB database, using mongodump to backup could take many days.
+  - This separate file transfer tool is required, because using WeKan built-in migrations still has too many time consuming step.
+  - Meteor WeKan will continue using MongoDB for text data. Files can be stored outside of MongoDB.
+  - Upcoming Multiverse WeKan will use SQLite database for text data. Files are stored outside of SQLite.
 - WeKan ® is Open Source kanban
   - MIT license
   - Website https://wekan.github.io
