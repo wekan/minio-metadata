@@ -84,9 +84,19 @@ Installed commands:
 
 ## Transferring files
 
-1. Edit settings.sh
+a) Do everything at once:
 
-2. `./start.sh`
+1. Edit `settings.sh` to change MongoDB, SQLite and Minio settings.
+
+2a) Do everything of 2b at one step
+
+ `./start.sh`
+
+2b) Do in separate steps
+
+`./mongoexport.sh` (Copy text from MongoDB to SQLite)
+
+`./transfer.sh` (Copy files from MongoDB to Minio)
 
 ## What will happen while tranferring files
 
@@ -105,3 +115,5 @@ This will:
 ## TODO
 
 - Add metadata to minio. All that metadata is also at wekan.sqlite, so it could be also added later.
+- After uploading file to MinIO, check that it was uploaded successfully, that uploading did not fail.
+- Continue from interrupted transfer process file number.

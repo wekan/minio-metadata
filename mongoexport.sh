@@ -81,3 +81,5 @@ echo ".mode csv
 .import csv/meteor-migrations.csv meteor-migrations
 .import csv/presences.csv presences
 .quit" | sqlite3 wekan.sqlite
+
+rm csv/*.csv
