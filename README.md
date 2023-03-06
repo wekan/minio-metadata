@@ -14,7 +14,7 @@ Installed commands:
 
 2. `./start.sh`
 
-## What will happen while tranferring riles
+## What will happen while tranferring files
 
 This will:
 
