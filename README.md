@@ -84,13 +84,13 @@ Installed commands:
 
 ## Transferring files
 
-1) Edit `settings.sh` to change MongoDB, SQLite and Minio settings.
+1. Edit `settings.sh` to change MongoDB, SQLite and Minio settings.
 
-2a) Do everything of 2b) at one step
+2. a) Do everything of 2b) at one step
 
  `./start.sh`
 
-2b) Do in separate steps
+2. b) Do in separate steps
 
 `./mongoexport.sh` (Copy text from MongoDB to SQLite)
 
