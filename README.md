@@ -98,9 +98,7 @@ Installed commands:
 
 ## What will happen while tranferring files
 
-This will:
-
-1. Export MongoDB text to wekan.sqlite (Temporary .csv files at directory csv/ )
+1. Export MongoDB text to wekan.sqlite (Temporary .csv files at directory csv will be deleted after they have been imported to SQLit )
 
 2. Export file from MongoDB GridFS to current directory
 
@@ -109,6 +107,8 @@ This will:
 4. Delete file from current directory, to not fill more disk space.
 
 5. Go back to step 2. for each file
+
+NOTE: Running scripts again currently will overwrite wekan.sqlite file new data and transfer files to minio again.
 
 ## TODO
 
