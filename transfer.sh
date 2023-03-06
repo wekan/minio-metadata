@@ -36,9 +36,15 @@ FILEDIR=attachments
 FILECOLL=cfs_gridfs.attachments
 FILECOLLFILES=cfs_gridfs.attachments.files
 transfer
+FILECOLL=attachments
+FILECOLLFILES=attachments.files
+transfer
 
 # 2) Transfer avatars
 FILEDIR=avatars
 FILECOLL=cfs_gridfs.avatars
 FILECOLLFILES=cfs_gridfs.avatars.files
+transfer
+FILECOLL=avatars
+FILECOLLFILES=avatars.files
 transfer
