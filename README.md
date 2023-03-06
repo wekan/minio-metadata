@@ -50,13 +50,13 @@
   - Has web interface for example at http://127.0.0.1:9000
   - Has API like AWS S3
   - MinIO is made with Go
-- mc is MinIO CLI is command line one execute
+- mc is MinIO CLI is command line one executeable binary
   - AGPLv3 license
   - Website https://min.io/docs/minio/linux/reference/minio-mc.html
   - Repo  https://github.com/minio/mc
   - can copy files to minio server, etc
   - mc is made with Go
-- SQLite is SQL database that stores all tables etc in one .sqlite file
+- SQLite is SQL database in one executeable binary that stores all tables etc in one .sqlite file
   - Public Domain license
   - Website https://www.sqlite.org
   - SQLite is made with C89
