@@ -59,7 +59,6 @@
 - SQLite is SQL database that stores all tables etc in one .sqlite file
   - Public Domain lisence
   - Website https://www.sqlite.org
-- Transfer files scripts be
 
 Related, not used here:
 
