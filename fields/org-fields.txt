@@ -1,0 +1,8 @@
+_id
+orgDisplayName
+orgDesc
+orgShortName
+orgWebsite
+orgIsActive
+createdAt
+modifiedAt

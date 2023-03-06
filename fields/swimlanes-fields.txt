@@ -1,0 +1,11 @@
+_id
+title
+archived
+archivedAt
+boardId
+createdAt
+sort
+color
+type
+updatedAt
+modifiedAt

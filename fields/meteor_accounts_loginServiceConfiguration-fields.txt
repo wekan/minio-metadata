@@ -1,0 +1,11 @@
+_id
+service
+idTokenWhitelistFields
+loginStyle
+clientId
+secret
+serverUrl
+authorizationEndpoint
+userinfoEndpoint
+tokenEndpoint
+requestPermissions

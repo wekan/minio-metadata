@@ -1,0 +1,16 @@
+_id
+title
+starred
+archived
+archivedAt
+boardId
+swimlaneId
+createdAt
+sort
+width
+height
+updatedAt
+modifiedAt
+wipLimit
+color
+type

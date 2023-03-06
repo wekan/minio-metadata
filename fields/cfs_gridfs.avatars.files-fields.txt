@@ -1,0 +1,9 @@
+_id
+filename
+contentType
+lenght
+chunkSize
+uploadDate
+aliases
+metadata
+md5

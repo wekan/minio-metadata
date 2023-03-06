@@ -1,0 +1,13 @@
+_id
+original.type
+original.size
+original.updatedAt
+original.name
+copies
+boardId
+swimlaneId
+listId
+cardId
+userId
+uploadedAt
+synchronizedAt

@@ -1,2 +1,6 @@
 ## node meta.js > result.json
-node meta.js
+##node meta.js
+
+./mongoexport.sh
+
+./transfer.sh

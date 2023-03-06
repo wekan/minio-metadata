@@ -1,0 +1,7 @@
+_id
+cardId
+title
+finishedAt
+createdAt
+modifiedAt
+sort

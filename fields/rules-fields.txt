@@ -1,0 +1,7 @@
+_id
+title
+triggerId
+actionId
+boardId
+createdAt
+modifiedAt

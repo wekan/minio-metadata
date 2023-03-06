@@ -1,0 +1,7 @@
+_id
+userId
+boardId
+cardId
+text
+createdAt
+modifiedAt

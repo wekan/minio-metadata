@@ -1,0 +1,8 @@
+_id
+original.name
+original.updatedAt
+original.size
+original.type
+userId
+uploadedAt
+copies

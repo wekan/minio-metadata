@@ -1,0 +1,9 @@
+_id
+serverId
+ttl
+clientAddress
+status
+connectedAt
+lastSeen
+state
+userId

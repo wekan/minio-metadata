@@ -1,0 +1,8 @@
+_id
+adminId
+userId
+boardId
+attachmentId
+reason
+createdAt
+modifiedAt

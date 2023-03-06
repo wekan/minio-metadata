@@ -34,6 +34,8 @@ ehthumbs.db
 .devcontainer/docker-compose.extend.yml
 .devcontainer/volumes*/
 .coverage
+*.sqlite
+*.csv
 
 # Helm chart
 # Chart dependencies

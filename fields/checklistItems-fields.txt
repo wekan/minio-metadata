@@ -1,0 +1,9 @@
+_id
+title
+sort
+isFinished
+checklistId
+cardId
+createdAt
+modifiedAt
+

@@ -1,0 +1,12 @@
+_id
+boardIds
+name
+type
+settings
+showOnCard
+automaticallyOnCard
+alwaysOnCard
+showLabelOnMinicard
+showSumAtTopOfList
+createdAt
+modifiedAt

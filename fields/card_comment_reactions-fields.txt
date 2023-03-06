@@ -1,0 +1,5 @@
+_id
+boardId
+cardCommentId
+cardId
+reactions

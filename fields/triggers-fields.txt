@@ -1,0 +1,15 @@
+_id
+userId
+username
+activityType
+boardId
+swimlaneName
+oldListName
+listName
+cardTitle
+desc
+labelId
+checklistName
+checklistItemName
+createdAt
+updatedAt

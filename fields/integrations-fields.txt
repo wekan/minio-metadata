@@ -1,0 +1,11 @@
+_id
+enabled
+title
+type
+activities
+url
+token
+boardId
+userId
+createdAt
+modifiedAt
