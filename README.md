@@ -116,3 +116,5 @@ NOTE: Running scripts again currently will overwrite wekan.sqlite file new data 
 - Add metadata to minio. All that metadata is also at wekan.sqlite, so it could be also added later.
 - After uploading file to MinIO, check that it was uploaded successfully, that uploading did not fail.
 - Continue from interrupted transfer process file number.
+- Check does exporting newer attachments require different OID1 etc format, check latest commit messages about it.
+
