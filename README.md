@@ -97,7 +97,7 @@ Installed commands:
 
 ## What will happen while tranferring files
 
-1. Export MongoDB text to wekan.sqlite (Temporary .csv files at directory csv will be deleted after they have been imported to SQLit )
+1. Export MongoDB text to wekan.sqlite (Temporary .csv files at directory csv will be deleted after they have been imported to SQLite)
 
 2. Export file from MongoDB GridFS to current directory
 
