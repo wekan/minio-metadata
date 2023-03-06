@@ -5,7 +5,7 @@
 Installed commands:
 
 - mc: minio mc command https://min.io/docs/minio/linux/reference/minio-mc.html
-- mongofiles: newest from MongoDB tools https://www.mongodb.com/try/download/database-tools
+- mongofiles and mongoexport: newest from MongoDB tools https://www.mongodb.com/try/download/database-tools
 - sqlite3: For example, `sudo apt install sqlite3`
 
 ## Transferring files
