@@ -1,8 +1,20 @@
 # Transfer files from MongoDB GridFS to Minio
 
+## Requirements
+
+Installed commands:
+
+- mc: minio mc command https://min.io/docs/minio/linux/reference/minio-mc.html
+- mongofiles: newest from MongoDB tools https://www.mongodb.com/try/download/database-tools
+- sqlite3: For example, `sudo apt install sqlite3`
+
+## Transferring files
+
 1. Edit settings.sh
 
 2. `./start.sh`
+
+## What will happen while tranferring riles
 
 This will:
 
@@ -16,6 +28,6 @@ This will:
 
 5. Go back to step 2. for each file
 
-TODO:
+## TODO
 
 - Add metadata to minio. All that metadata is also at wekan.sqlite, so it could be also added later.
