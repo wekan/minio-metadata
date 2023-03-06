@@ -17,7 +17,7 @@
   - WeKan is made with Javascript: Meteor, Node.js 14.x, MongoDB 5.x
   - WeKan attachments and avatars are stored in MongoDB GridFS format in MongoDB database.
 - MongoDB is noSQL database
-  - SSPL license (some previous version was AGPLv3)
+  - SSPL license https://en.wikipedia.org/wiki/Server_Side_Public_License
   - Website https://www.mongodb.com
   - Repo https://github.com/mongodb/mongo
   - Download MongoDB Community Server https://www.mongodb.com/try/download/community
@@ -57,7 +57,7 @@
   - can copy files to minio server, etc
   - mc is made with Go
 - SQLite is SQL database that stores all tables etc in one .sqlite file
-  - Public Domain lisence
+  - Public Domain license
   - Website https://www.sqlite.org
 
 Related, not used here:
