@@ -56,16 +56,22 @@
   - Repo  https://github.com/minio/mc
   - can copy files to minio server, etc
   - mc is made with Go
-- RClone is CLI similar to mc, but supports more file services
-  - MIT license
-  - Website https://rclone.org
-  - https://github.com/rclone/rclone
-  - RClone is not used in scripts below
-  - RClone is made with Go
 - SQLite is SQL database that stores all tables etc in one .sqlite file
   - Public Domain lisence
   - Website https://www.sqlite.org
 - Transfer files scripts be
+
+Related, not used here:
+
+- DBGate is GUI to connect to MongoDB database server to view and edit database JSON content
+  - MIT license
+  - Website https://dbgate.org
+  - Repo https://github.com/dbgate/dbgate
+- RClone is CLI similar to mc, but supports more file services
+  - MIT license
+  - Website https://rclone.org
+  - https://github.com/rclone/rclone
+  - RClone is made with Go
 
 ## Requirements
 
