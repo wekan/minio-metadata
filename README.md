@@ -2,6 +2,7 @@
 
 ## Introduction
 
+- TLDR: Bash scripts to transfer attachment and avatar files from MongoDB GridFS to Minio file server, using below CLI commands
 - WeKan ® is Open Source kanban
   - MIT license
   - Website https://wekan.github.io
