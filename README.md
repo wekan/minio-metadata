@@ -1,4 +1,4 @@
-# Transfer files from MongoDB GridFS to Minio file server
+# Transfer files from MongoDB GridFS to Minio file server, and MongoDB text to SQLite
 
 ## Introduction
 
