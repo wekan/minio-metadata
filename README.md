@@ -9,7 +9,7 @@
   - It is very slow to backup 800 GB database, using mongodump to backup could take many days.
   - This separate file transfer tool is required, because using WeKan built-in migrations still has too many time consuming step.
   - Meteor WeKan will continue using MongoDB for text data. Files can be stored outside of MongoDB.
-  - Upcoming Multiverse WeKan will use SQLite database for text data. Files are stored outside of SQLite.
+  - Upcoming Multiverse WeKan https://github.com/wekan/wekan/issues/4578 will use SQLite database for text data. Files are stored outside of SQLite.
 - WeKan ® is Open Source kanban
   - MIT license
   - Website https://wekan.github.io
