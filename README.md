@@ -59,6 +59,7 @@
 - SQLite is SQL database in one executeable binary that stores all tables etc in one .sqlite file
   - Public Domain license
   - Website https://www.sqlite.org
+  - Repo at bottom of page https://sqlite.org/download.html
   - SQLite is made with C89
 
 Related, not used here:
