@@ -97,6 +97,14 @@ Installed commands:
 
 `./transfer.sh` (Copy files from MongoDB to Minio)
 
+Logging transfer to textfile:
+
+`./transfer.sh > logfile.txt`
+
+Looking at transfer progress at other terminal:
+
+`tail -f logfile.txt`
+
 ## What will happen while tranferring files
 
 1. Export MongoDB text to wekan.sqlite (Temporary .csv files at directory csv will be deleted after they have been imported to SQLite)
