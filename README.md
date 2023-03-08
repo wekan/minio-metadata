@@ -117,7 +117,9 @@ How to remove extra text when looking logfile, not needed working results:
 ```
 cat logfile.txt | grep -v success | less
 ```
-That -v option removes that kind of text from logfile, only showing errors or other remaining text.
+- That -v option removes that kind of text from logfile, only showing errors or other remaining text.
+- In remaining log text can be seen, is there any file transfer errors, or does some file need to be transferred again.
+- To be tested, does exporting newer attachments require different OID1 etc format.
 
 ## What will happen while tranferring files
 
@@ -133,10 +135,10 @@ That -v option removes that kind of text from logfile, only showing errors or ot
 
 NOTE: Running scripts again currently will overwrite wekan.sqlite file new data and transfer files to minio again.
 
+
 ## TODO
 
-- Add metadata to minio. All that metadata is also at wekan.sqlite, so it could be also added later.
-- After uploading file to MinIO, check that it was uploaded successfully, that uploading did not fail.
-- Continue from interrupted transfer process file number.
-- Check does exporting newer attachments require different OID1 etc format, check latest commit messages about it.
-
+- Add metadata to minio. This can be done later, because every filename it minio will be FILEID-FILENAME. 
+  - Create SQL query for FILEID
+  - For each FILEID, do queries for metadata, like cardname, username, etc
+  - Combine metadata to correct JSON file format that is OK to save to minio
