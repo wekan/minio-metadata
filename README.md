@@ -113,6 +113,12 @@ Metadata needs to need in JSON format properly.
 
 mc command also has SQL to search.
 
+How to remove extra text when looking logfile, not needed working results:
+```
+cat logfile.txt | grep -v success | less
+```
+That -v option removes that kind of text from logfile, only showing errors or other remaining text.
+
 ## What will happen while tranferring files
 
 1. Export MongoDB text to wekan.sqlite (Temporary .csv files at directory csv will be deleted after they have been imported to SQLite)
