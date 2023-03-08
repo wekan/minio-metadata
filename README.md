@@ -105,6 +105,14 @@ Looking at transfer progress at other terminal:
 
 `tail -f logfile.txt`
 
+mc command has command line option to add metadata
+
+Metadata can be added be selected from SQLite database in transfer.sh script.
+
+Metadata needs to need in JSON format properly.
+
+mc command also has SQL to search.
+
 ## What will happen while tranferring files
 
 1. Export MongoDB text to wekan.sqlite (Temporary .csv files at directory csv will be deleted after they have been imported to SQLite)
