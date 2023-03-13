@@ -16,6 +16,9 @@ function transfer {
   do
     OBJECTID=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT substr(_id, 10, 24) FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
     FILENAME=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT filename FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
+    CONTENTTYPE=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT contentType FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
+    UPLOADDATE=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT uploadDate FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
+    MD5=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT md5 FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
     # OLD OBJECTID:
     OID1="'{\"\$oid\":\""
     OID2="\"}'"
@@ -26,14 +29,17 @@ function transfer {
     FINALFILENAME=$OBJECTID-$FILENAME
     #echo $FINALOBJECTID
     echo "File number: ${FILENUMBER} / ${MAXFILECOUNT}"
-    SAVEFILE=$(echo mongofiles --host ${MONGOHOST} --port ${MONGOPORT} -d ${MONGODBNAME} --prefix ${FILECOLL} get_id ${FINALOBJECTID} --local ${FINALFILENAME})
+    echo "mc --attr objectid=$OBJECTID"
+    #SAVEFILE=$(echo mongofiles --host ${MONGOHOST} --port ${MONGOPORT} -d ${MONGODBNAME} --prefix ${FILECOLL} get_id ${FINALOBJECTID} --local ${FINALFILENAME})
     #echo $FINALFILENAME
     #eval $SAVEFILE
-    echo $SAVEFILE
-    UPLOADMINIO=$(echo mc cp "${FINALFILENAME}" "${MINIOBUCKETNAME}/${FILEDIR}/${FINALFILENAME}")
+    #echo $SAVEFILE
+    #FILEMETA=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT filename FROM \"cfs_gridfs.attachments.files\" WHERE _id=\"ObjectId($OBJECTID)\";")
+    #echo $FILEMETA
+    #UPLOADMINIO=$(echo mc cp "${FINALFILENAME}" "${MINIOBUCKETNAME}/${FILEDIR}/${FINALFILENAME}")
     #eval $UPLOADMINIO
-    echo $UPLOADMINIO
-    echo rm "${FINALFILENAME}"
+    #echo $UPLOADMINIO
+    #echo rm "${FINALFILENAME}"
   done
 }
 
