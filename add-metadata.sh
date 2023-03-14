@@ -29,7 +29,7 @@ function transfer {
     FINALFILENAME=$OBJECTID-$FILENAME
     #echo $FINALOBJECTID
     echo "File number: ${FILENUMBER} / ${MAXFILECOUNT}"
-    echo "mc --attr objectid=$OBJECTID"
+    echo "mc --attr objectid=$OBJECTID filename=$FILENAME contenttype=$CONTENTTYPE uploaddate=$UPLOADDATE md5=$MD5"
     #SAVEFILE=$(echo mongofiles --host ${MONGOHOST} --port ${MONGOPORT} -d ${MONGODBNAME} --prefix ${FILECOLL} get_id ${FINALOBJECTID} --local ${FINALFILENAME})
     #echo $FINALFILENAME
     #eval $SAVEFILE
