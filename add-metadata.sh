@@ -19,6 +19,10 @@ function transfer {
     CONTENTTYPE=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT contentType FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
     UPLOADDATE=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT uploadDate FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
     MD5=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT md5 FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
+    UPAT=$(echo "SELECT \"original.updatedAt\" FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
+    UPDATEDAT=$(sqlite3 -quote ${SQLITEDBNAME} "${UPAT}" | tr -d "'")
+    SIZE=$(echo "SELECT \"original.size\" FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
+    FILESIZE=$(sqlite3 -quote ${SQLITEDBNAME} "${SIZE}" | tr -d "'")
     # OLD OBJECTID:
     OID1="'{\"\$oid\":\""
     OID2="\"}'"
@@ -29,7 +33,7 @@ function transfer {
     FINALFILENAME=$OBJECTID-$FILENAME
     #echo $FINALOBJECTID
     echo "File number: ${FILENUMBER} / ${MAXFILECOUNT}"
-    echo "mc --attr objectid=$OBJECTID filename=$FILENAME contenttype=$CONTENTTYPE uploaddate=$UPLOADDATE md5=$MD5"
+    echo "mc --attr \"objectId=$OBJECTID\;filename=$FILENAME\;filesize=$FILESIZE;contentType=$CONTENTTYPE\;uploadDate=$UPLOADDATE\;md5=$MD5\;updatedAt=$UPDATEDAT\""
     #SAVEFILE=$(echo mongofiles --host ${MONGOHOST} --port ${MONGOPORT} -d ${MONGODBNAME} --prefix ${FILECOLL} get_id ${FINALOBJECTID} --local ${FINALFILENAME})
     #echo $FINALFILENAME
     #eval $SAVEFILE
@@ -51,16 +55,20 @@ function transfer {
 FILEDIR=attachments
 FILECOLL=cfs_gridfs.attachments
 FILECOLLFILES=cfs_gridfs.attachments.files
+FILERECORD=cfs.attachments.filerecord
 transfer
 #FILECOLL=attachments
 #FILECOLLFILES=attachments.files
+#FILERECORD=attachments.filerecord
 #transfer
 
 # 2) Transfer avatars
 #FILEDIR=avatars
 #FILECOLL=cfs_gridfs.avatars
 #FILECOLLFILES=cfs_gridfs.avatars.files
+#FILERECORD=cfs.avatars.filerecord
 #transfer
 #FILECOLL=avatars
 #FILECOLLFILES=avatars.files
+#FILERECORD=avatarts.filerecord
 #transfer
