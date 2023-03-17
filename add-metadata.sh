@@ -23,6 +23,20 @@ function transfer {
     UPDATEDAT=$(sqlite3 -quote ${SQLITEDBNAME} "${UPAT}" | tr -d "'")
     SIZE=$(echo "SELECT \"original.size\" FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
     FILESIZE=$(sqlite3 -quote ${SQLITEDBNAME} "${SIZE}" | tr -d "'")
+    CO=$(echo "SELECT copies FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
+    COPIES=$(sqlite3 -quote ${SQLITEDBNAME} "${CO}" | tr -d "'")
+    BO=$(echo "SELECT boardId FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
+    BOARDID=$(sqlite3 -quote ${SQLITEDBNAME} "${BO}" | tr -d "'")
+    CA=$(echo "SELECT cardId FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
+    CARDID=$(sqlite3 -quote ${SQLITEDBNAME} "${CA}" | tr -d "'")
+    US=$(echo "SELECT userId FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
+    USERID=$(sqlite3 -quote ${SQLITEDBNAME} "${US}" | tr -d "'")
+    UPL=$(echo "SELECT \"original.updatedAt\" FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
+    UPLOADEDAT=$(sqlite3 -quote ${SQLITEDBNAME} "${UPL}" | tr -d "'")
+    BTITLE=$(echo "SELECT title FROM boards WHERE _id=\"${BOARDID}\";" | tr -d "'")
+    echo $BTITLE
+    BOARDTITLE=$(sqlite3 -quote ${SQLITEDBNAME} "${BTITLE}" | tr -d "'")
+    echo $BOARDTITLE
     # OLD OBJECTID:
     OID1="'{\"\$oid\":\""
     OID2="\"}'"
@@ -33,7 +47,7 @@ function transfer {
     FINALFILENAME=$OBJECTID-$FILENAME
     #echo $FINALOBJECTID
     echo "File number: ${FILENUMBER} / ${MAXFILECOUNT}"
-    echo "mc --attr \"objectId=$OBJECTID\;filename=$FILENAME\;filesize=$FILESIZE;contentType=$CONTENTTYPE\;uploadDate=$UPLOADDATE\;md5=$MD5\;updatedAt=$UPDATEDAT\""
+    echo "mc --attr \"objectId=$OBJECTID\;filename=$FILENAME\;filesize=$FILESIZE;contentType=$CONTENTTYPE\;md5=$MD5\;uploadDate=$UPLOADDATE\;updatedAt=$UPDATEDAT\;uploadedAt=$UPLOADEDAT\;copies=$COPIES\;boardId=$BOARDID\;boardTitle=$BOARDTITLE\;userId=$USERID\""
     #SAVEFILE=$(echo mongofiles --host ${MONGOHOST} --port ${MONGOPORT} -d ${MONGODBNAME} --prefix ${FILECOLL} get_id ${FINALOBJECTID} --local ${FINALFILENAME})
     #echo $FINALFILENAME
     #eval $SAVEFILE
