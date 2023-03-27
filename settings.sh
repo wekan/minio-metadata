@@ -2,9 +2,9 @@
 
 # 1) MongoDB settings
 
-export MONGOURI='mongodb://localhost:27017/wekan'
+export MONGOURI='mongodb://localhost:27019/wekan'
 export MONGOHOST=localhost
-export MONGOPORT=27017
+export MONGOPORT=27019
 export MONGODBNAME=wekan
 
 # 2) SQLite settings
