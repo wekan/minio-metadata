@@ -142,6 +142,7 @@ NOTE: Running scripts again currently will overwrite wekan.sqlite file new data 
   - When transferring files, some of files are not transferred. Is this bug in mc command, bash script, or MinIO server?
   - When metadata is added, some metadata is missing for some files.
   - Does MinIO not work on ext4 on Linux? https://github.com/minio/minio/issues/16602#issuecomment-1427509203
+  - This MinIO bug is problem, someone recommended to not use MinIO because of it https://github.com/minio/minio/issues/9419
   - Would MinIO server AGPLv3 license change WeKan MIT licence to AGPLv3 ? Some recommend staying away from MinIO: https://news.ycombinator.com/item?id=35328316
   - What alternatives there are for MinIO ?
 - Add more metadata to minio.
