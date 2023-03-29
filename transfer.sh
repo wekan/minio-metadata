@@ -2,9 +2,14 @@
 
 source settings.sh
 
+urldecode() { local u="${1//+/ }"; printf '%b' "${u//%/\\x}"; }
+
+#urldecode $1
+
+
 function transfer {
   MAXFILECOUNT=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT count(*) FROM '${FILECOLLFILES}';" | tr -d "'")
-  #MAXFILECOUNT=10
+  #MAXFILECOUNT=4
   for ((FILENUMBER=1; FILENUMBER<=MAXFILECOUNT; FILENUMBER++))
   do
     OBJECTID=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT substr(_id, 10, 24) FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
@@ -16,17 +21,27 @@ function transfer {
     #OID1="'ObjectId(\""
     #OID2="\")'"
     FINALOBJECTID=$OID1$OBJECTID$OID2
-    FINALFILENAME=$OBJECTID
     #echo $FINALOBJECTID
     echo "File number: ${FILENUMBER} / ${MAXFILECOUNT}"
-    SAVEFILE=$(echo mongofiles --host ${MONGOHOST} --port ${MONGOPORT} -d ${MONGODBNAME} --prefix ${FILECOLL} get_id ${FINALOBJECTID} --local ${FINALFILENAME})
-    #echo $FINALFILENAME
+    # Save from MongoDB to filename OBJECTID.
+    SAVEFILE=$(echo mongofiles --host ${MONGOHOST} --port ${MONGOPORT} -d ${MONGODBNAME} --prefix ${FILECOLL} get_id ${FINALOBJECTID} --local ${OBJECTID})
     eval $SAVEFILE
+    FILETYPE=$(file $OBJECTID)
+    FILEEXTENSION=$(file --extension $OBJECTID)
+    FILEEXTENSIONLENGTH=$(echo ${#FILEEXTENSION})
+    #cat yourfile.txt | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]'
+    #TEMPFILENAME=$(echo urldecode $FILENAME | iconv -f utf-8 -t us-ascii//TRANSLIT | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
+    TEMPFILENAME=$(urldecode $FILENAME | sed -e 's/[()%]//g')
+    #sed 's|"||g' - | sed 's| |_|g' - | sed 's|(||g' - | sed 's|)||g' - |
+    # If there is no file extension, add it
+    if [ "${TEMPFILENAME##*.}" = "" ]; then
+       $TEMPFILENAME=$(echo "$TEMPFILENAME.$FILEEXTENSION")
+    fi
+    FINALFILENAME=$(echo $OBJECTID-$TEMPFILENAME) 
+    echo $FINALFILENAME
     # Adding metadata to file with mc command:
     # mc --attr key1=value1\;key2=value2\;key3=value3
     # https://min.io/docs/minio/linux/reference/minio-mc/mc-cp.html#syntax
-    OBJECTID=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT substr(_id, 10, 24) FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
-    FILENAME=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT filename FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
     CONTENTTYPE=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT contentType FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
     UPLOADDATE=$(sqlite3 -quote ${SQLITEDBNAME} "SELECT uploadDate FROM '${FILECOLLFILES}' WHERE ROWID=${FILENUMBER};" | tr -d "'")
     UPLOADEDATTEXT=$(echo "SELECT \"original.updatedAt\" FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
@@ -80,9 +95,10 @@ function transfer {
     A6="X-Amz-Meta-Swimlaneid=${SWIMLANEID};X-Amz-Meta-Swimlanetitle=${SWIMLANETITLE};"
     A7="X-Amz-Meta-Listid=${LISTID};X-Amz-Meta-Listtitle=${LISTTITLE};"
     A8="X-Amz-Meta-Userid=${USERID};X-Amz-Meta-Username=${USERNAME};X-Amz-Meta-Fullname=${FULLNAME};"
-    A9="X-Amz-Meta-Emails=${EMAILS}"
+    A9="X-Amz-Meta-Emails=${EMAILS};"
+    A10="X-Amz-Meta-Filetype=${FILETYPE};X-Amz-Meta-Filetype=${FILEEXTENSION}"
     #echo "$SWIMLANEID"
-    UPLOADMINIO=$(echo "mc mv ${FINALFILENAME} ${MINIOBUCKETNAME}/${FILEDIR}/${FINALFILENAME} --attr \"$A1$A2$A3$A4$A5$A6$A7$A8$A9\"")
+    UPLOADMINIO=$(echo "mc mv \"${OBJECTID}\" \"${MINIOBUCKETNAME}/${FILEDIR}/${FINALFILENAME}\" --attr \"$A1$A2$A3$A4$A5$A6$A7$A8$A9$A10\"")
     #echo "$UPLOADMINIO"
     #echo "mv mv ${FINALFILENAME} ${MINIOBUCKETNAME}/${FILEDIR}/${FINALFILENAME} --attr \"$A1$A2$A3$A4$A5$A7$A8$A9\""
     #echo "$CARDID $CARDTITLE"
