@@ -2,6 +2,7 @@
 *.sw*
 .meteor-spk
 *.sublime-workspace
+dump/
 tmp/
 node_modules/
 npm-debug.log
