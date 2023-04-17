@@ -145,6 +145,7 @@ NOTE: Running scripts again currently will overwrite wekan.sqlite file new data 
   - This MinIO bug is problem, someone recommended to not use MinIO because of it https://github.com/minio/minio/issues/9419
   - Would MinIO server AGPLv3 license change WeKan MIT licence to AGPLv3 ? Some recommend staying away from MinIO: https://news.ycombinator.com/item?id=35328316
   - What alternatives there are for MinIO ?
+  - Attachment filename sanitize when storing files serverside, like use only ObjectID or hash https://github.com/wekan/wekan/issues/4416
 - Add more metadata to minio.
   - Create SQL query for FILEID
   - For each FILEID, do queries for metadata, like cardname, username, etc
