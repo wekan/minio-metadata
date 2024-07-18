@@ -123,7 +123,7 @@ cat logfile.txt | grep -v success | less
 
 ## What will happen while tranferring files
 
-1. Export MongoDB text to wekan.sqlite (Temporary .csv files at directory csv will be deleted after they have been imported to SQLite)
+1. Export MongoDB text to wekan.db (Temporary .csv files at directory csv will be deleted after they have been imported to SQLite)
 
 2. Export file from MongoDB GridFS to current directory
 
@@ -133,7 +133,7 @@ cat logfile.txt | grep -v success | less
 
 5. Go back to step 2. for each file
 
-NOTE: Running scripts again currently will overwrite wekan.sqlite file new data and transfer files to minio again.
+NOTE: Running scripts again currently will overwrite wekan.db file new data and transfer files to minio again.
 
 
 ## TODO
