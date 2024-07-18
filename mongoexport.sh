@@ -2,7 +2,7 @@
 
 source settings.sh
 
-rm wekan.sqlite csv/*.csv
+rm $SQLITEDBNAME csv/*.csv
 
 mongoexport --uri="${MONGOURI}" --collection=attachments --type=csv --fieldFile=fields/attachments-fields.txt --out=csv/attachments.csv
 mongoexport --uri="${MONGOURI}" --collection=attachments.files --type=csv --fieldFile=fields/attachments.files-fields.txt --out=csv/attachments.files.csv
@@ -22,6 +22,6 @@ echo ".mode csv
 .import csv/cfs.avatars.filerecord.csv cfs.avatars.filerecord
 .import csv/cfs_gridfs.attachments.files.csv cfs_gridfs.attachments.files
 .import csv/cfs_gridfs.avatars.files.csv cfs_gridfs.avatars.files
-.quit" | sqlite3 wekan.sqlite
+.quit" | sqlite3 $SQLITEDBNAME
 
 rm csv/*.csv

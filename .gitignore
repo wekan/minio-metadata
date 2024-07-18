@@ -36,6 +36,7 @@ ehthumbs.db
 .devcontainer/volumes*/
 .coverage
 *.sqlite
+*.db
 *.csv
 
 # Helm chart

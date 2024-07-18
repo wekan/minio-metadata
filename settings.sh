@@ -2,14 +2,14 @@
 
 # 1) MongoDB settings
 
-export MONGOURI='mongodb://localhost:27019/wekan'
+export MONGOURI='mongodb://localhost:27017/wekan'
 export MONGOHOST=localhost
-export MONGOPORT=27019
+export MONGOPORT=27017
 export MONGODBNAME=wekan
 
 # 2) SQLite settings
 
-export SQLITEDBNAME=wekan.sqlite
+export SQLITEDBNAME=wekan.db
 
 # 3) Minio settings
 #

@@ -2,7 +2,7 @@
 
 source settings.sh
 
-rm wekan.sqlite csv/*.csv
+rm $SQLITEDBNAME csv/*.csv
 
 mongoexport --uri="${MONGOURI}" --collection=accountSettings --type=csv --fieldFile=fields/accountSettings-fields.txt --out=csv/accountSettings.csv
 mongoexport --uri="${MONGOURI}" --collection=actions --type=csv --fieldFile=fields/actions-fields.txt --out=csv/actions.csv
@@ -80,6 +80,6 @@ echo ".mode csv
 .import csv/meteor_accounts_loginServiceConfiguration.csv meteor_accounts_loginServiceConfiguration
 .import csv/meteor-migrations.csv meteor-migrations
 .import csv/presences.csv presences
-.quit" | sqlite3 wekan.sqlite
+.quit" | sqlite3 $SQLITEDBNAME
 
 rm csv/*.csv
