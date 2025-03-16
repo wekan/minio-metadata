@@ -4,6 +4,14 @@ orgs
 teams
 services.password.bcrypt
 services.email.verificationTokens
+services.resume.loginTokens
+services.oidc.id
+services.oidc.accessToken
+services.oidc.expiresAt
+services.oidc.email
+services.accounts-lockout.failedAttempts
+services.accounts-lockout.lastFailedAttempt
+services.accounts-lockout.firstFailedAttempt
 emails
 profile.avatarUrl
 profile.emailBuffer
@@ -40,5 +48,6 @@ authenticationMethod
 sessionData
 sessionData.totalHits
 importUsernames
+lastConnectionDate
 createdAt
 modifiedAt

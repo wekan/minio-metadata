@@ -6,6 +6,6 @@ activities
 url
 token
 boardId
-userId
 createdAt
 modifiedAt
+userId

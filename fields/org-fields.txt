@@ -2,6 +2,7 @@ _id
 orgDisplayName
 orgDesc
 orgShortName
+orgAutoAddUsersWithDomainName
 orgWebsite
 orgIsActive
 createdAt

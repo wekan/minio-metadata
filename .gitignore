@@ -43,3 +43,20 @@ ehthumbs.db
 # Chart dependencies
 /helm/wekan/**/*.tgz
 /helm/wekan/charts
+
+# Files
+/files/
+/files2/
+/avatars/
+/avatars2/
+*.txt
+/0*
+/1*
+/2*
+/3*
+/4*
+/5*
+/6*
+/7*
+/8*
+/9*

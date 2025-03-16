@@ -1,0 +1,6 @@
+_id
+language
+text
+translationText
+createdAt
+modifiedAt

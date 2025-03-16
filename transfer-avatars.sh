@@ -51,12 +51,12 @@ function transfer {
     FILESIZE=$(sqlite3 -quote ${SQLITEDBNAME} "${FILESIZETEXT}" | tr -d "'")
     COPIESTEXT=$(echo "SELECT copies FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
     COPIES=$(sqlite3 -quote ${SQLITEDBNAME} "${COPIESTEXT}" | tr -d "'")
-    BOARDIDTEXT=$(echo "SELECT boardId FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
-    BOARDID=$(sqlite3 -quote ${SQLITEDBNAME} "${BOARDIDTEXT}" | tr -d "'")
+    #BOARDIDTEXT=$(echo "SELECT boardId FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\";" | tr -d "'")
+    #BOARDID=$(sqlite3 -quote ${SQLITEDBNAME} "${BOARDIDTEXT}" | tr -d "'")
     BOARDTITLETEXT=$(echo "SELECT title FROM boards WHERE _id=\"${BOARDID}\" LIMIT 1;" | tr -d "'")
     BOARDTITLE=$(sqlite3 -quote ${SQLITEDBNAME} "${BOARDTITLETEXT}" | tr -d "'")
-    CARDIDTEXT=$(echo "SELECT cardId FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\" LIMIT 1;" | tr -d "'")
-    CARDID=$(sqlite3 -quote ${SQLITEDBNAME} "${CARDIDTEXT}" | tr -d "'")
+    #CARDIDTEXT=$(echo "SELECT cardId FROM \"${FILERECORD}\" WHERE copies LIKE \"%${OBJECTID}%\" LIMIT 1;" | tr -d "'")
+    #CARDID=$(sqlite3 -quote ${SQLITEDBNAME} "${CARDIDTEXT}" | tr -d "'")
     CARDTITLETEXT=$(echo "SELECT title FROM cards WHERE _id=\"${CARDID}\" LIMIT 1;" | tr -d "'")
     CARDTITLE=$(sqlite3 -quote ${SQLITEDBNAME} "${CARDTITLETEXT}" | tr -d "'")
     LISTIDTEXT=$(echo "SELECT listId FROM cards WHERE _id=\"${CARDID}\" LIMIT 1;" | tr -d "'")
@@ -85,10 +85,10 @@ function transfer {
     OID2="\"}'"
     FINALFILENAME=$(echo $OBJECTID-$TEMPFILENAME)
     echo $FINALFILENAME
-    if [ ! -d files ]; then
-      mkdir files
+    if [ ! -d avatars ]; then
+      mkdir avatars
     fi
-    mv "$OBJECTID" "files/$FINALFILENAME"
+    mv "$OBJECTID" "avatars/$FINALFILENAME"
     # NEW OBJECTID:
     #OID1="'ObjectId(\""
     #OID2="\")'"
@@ -106,7 +106,7 @@ function transfer {
 #    UPLOADMINIO=$(echo "mc mv \"${OBJECTID}\" \"${MINIOBUCKETNAME}/${FILEDIR}/${FINALFILENAME}\" --attr \"$A1$A2$A3$A4$A5$A6$A7$A8$A9$A10\"")
     #echo "$UPLOADMINIO"
     #echo "mv mv ${FINALFILENAME} ${MINIOBUCKETNAME}/${FILEDIR}/${FINALFILENAME} --attr \"$A1$A2$A3$A4$A5$A7$A8$A9\""
-    echo -e "$A1\n\n$A2\n\n$A3\n\n$A4\n\n$A5\n\n$A7\n\n$A8\n\n$A9\n\n$A19\n\n" > "files/${FINALFILENAME}.txt"
+    echo -e "$A1\n\n$A2\n\n$A3\n\n$A4\n\n$A5\n\n$A7\n\n$A8\n\n$A9\n\n$A19\n\n" > "avatars/${FINALFILENAME}.txt"
     #echo "$CARDID $CARDTITLE"
     #$A4$A5$A6$A7$A8
     #echo mc mv "${FINALFILENAME}" "${MINIOBUCKETNAME}/${FILEDIR}/${FINALFILENAME}" --attr "$A1$A2$A3$A4$A5$A7$A8"
@@ -121,22 +121,22 @@ function transfer {
 #}
 
 # 1) Transfer attachments
-FILEDIR=attachments
-FILECOLL=cfs_gridfs.attachments
-FILECOLLFILES=cfs_gridfs.attachments.files
-FILERECORD=cfs.attachments.filerecord
-transfer
+##FILEDIR=attachments
+##FILECOLL=cfs_gridfs.attachments
+##FILECOLLFILES=cfs_gridfs.attachments.files
+##FILERECORD=cfs.attachments.filerecord
+##transfer
 #FILECOLL=attachments
 #FILECOLLFILES=attachments.files
 #FILERECORD=attachments.filerecord
 #transfer
 
 # 2) Transfer avatars
-#FILEDIR=avatars
-#FILECOLL=cfs_gridfs.avatars
-#FILECOLLFILES=cfs_gridfs.avatars.files
-#FILERECORD=cfs.avatars.filerecord
-#transfer
+FILEDIR=avatars
+FILECOLL=cfs_gridfs.avatars
+FILECOLLFILES=cfs_gridfs.avatars.files
+FILERECORD=cfs.avatars.filerecord
+transfer
 #FILECOLL=avatars
 #FILECOLLFILES=avatars.files
 #FILERECORD=avatarts.filerecord

@@ -8,6 +8,7 @@ meta.boardId
 meta.swimlaneId
 meta.listId
 meta.cardId
+meta.source
 type
 mime
 mime-type

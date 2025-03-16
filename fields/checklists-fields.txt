@@ -5,3 +5,5 @@ finishedAt
 createdAt
 modifiedAt
 sort
+hideCheckedChecklistItems
+hideAllChecklistItems

@@ -1,7 +1,8 @@
 _id
-filename
 length
-contentType
+chunkSize
 uploadDate
+filename
 md5
+contentType
 metadata

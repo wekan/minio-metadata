@@ -1,0 +1,8 @@
+_id
+code
+email
+createdAt
+modifiedAt
+authorId
+boardsboardsToBeInvited
+valid

@@ -1,0 +1,6 @@
+_id
+enabled
+title
+body
+createdAt
+modifiedAt

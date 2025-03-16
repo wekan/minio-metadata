@@ -4,6 +4,7 @@ source settings.sh
 
 rm $SQLITEDBNAME csv/*.csv
 
+mongoexport --uri="${MONGOURI}" --collection=accessibilitySettings --type=csv --fieldFile=fields/accessibilitySettings-fields.txt --out=csv/accountSettings.csv
 mongoexport --uri="${MONGOURI}" --collection=accountSettings --type=csv --fieldFile=fields/accountSettings-fields.txt --out=csv/accountSettings.csv
 mongoexport --uri="${MONGOURI}" --collection=actions --type=csv --fieldFile=fields/actions-fields.txt --out=csv/actions.csv
 mongoexport --uri="${MONGOURI}" --collection=activities --type=csv --fieldFile=fields/activities-fields.txt --out=csv/activities.csv
@@ -17,6 +18,7 @@ mongoexport --uri="${MONGOURI}" --collection=cfs.avatars.filerecord --type=csv -
 mongoexport --uri="${MONGOURI}" --collection=cfs_gridfs.attachments.files --type=csv --fieldFile=fields/cfs_gridfs.attachments.files-fields.txt --out=csv/cfs_gridfs.attachments.files.csv
 mongoexport --uri="${MONGOURI}" --collection=cfs_gridfs.avatars.files --type=csv --fieldFile=fields/cfs_gridfs.avatars.files-fields.txt --out=csv/cfs_gridfs.avatars.files.csv
 mongoexport --uri="${MONGOURI}" --collection=boards --type=csv --fieldFile=fields/boards-fields.txt --out=csv/boards.csv
+mongoexport --uri="${MONGOURI}" --collection=cronHistory --type=csv --fieldFile=fields/cronHistory-fields.txt --out=csv/cronHistory.csv
 mongoexport --uri="${MONGOURI}" --collection=cards --type=csv --fieldFile=fields/cards-fields.txt --out=csv/cards.csv
 mongoexport --uri="${MONGOURI}" --collection=card_comment_reactions --type=csv --fieldFile=fields/card_comment_reactions-fields.txt --out=csv/card_comment_reactions.csv
 mongoexport --uri="${MONGOURI}" --collection=card_comments --type=csv --fieldFile=fields/card_comments-fields.txt --out=csv/card_comments.csv
@@ -25,6 +27,7 @@ mongoexport --uri="${MONGOURI}" --collection=checklistItems --type=csv --fieldFi
 mongoexport --uri="${MONGOURI}" --collection=customFields --type=csv --fieldFile=fields/customFields-fields.txt --out=csv/customFields.csv
 mongoexport --uri="${MONGOURI}" --collection=impersonatedUsers --type=csv --fieldFile=fields/impersonatedUsers-fields.txt --out=csv/impersonatedUsers.csv
 mongoexport --uri="${MONGOURI}" --collection=integrations --type=csv --fieldFile=fields/integrations-fields.txt --out=csv/integrations.csv
+mongoexport --uri="${MONGOURI}" --collection=invitationCodes --type=csv --fieldFile=fields/invitationCodes-fields.txt --out=csv/invitationCodes.csv
 mongoexport --uri="${MONGOURI}" --collection=lists --type=csv --fieldFile=fields/lists-fields.txt --out=csv/lists.csv
 mongoexport --uri="${MONGOURI}" --collection=org --type=csv --fieldFile=fields/org-fields.txt --out=csv/org.csv
 mongoexport --uri="${MONGOURI}" --collection=orgUser --type=csv --fieldFile=fields/orgUser-fields.txt --out=csv/orgUser.csv
@@ -34,6 +37,7 @@ mongoexport --uri="${MONGOURI}" --collection=swimlanes --type=csv --fieldFile=fi
 mongoexport --uri="${MONGOURI}" --collection=tableVisibilityModeSettings --type=csv --fieldFile=fields/tableVisibilityModeSettings-fields.txt --out=csv/tableVisibilityModeSettings.csv
 mongoexport --uri="${MONGOURI}" --collection=team --type=csv --fieldFile=fields/team-fields.txt --out=csv/team.csv
 mongoexport --uri="${MONGOURI}" --collection=triggers --type=csv --fieldFile=fields/triggers-fields.txt --out=csv/triggers.csv
+mongoexport --uri="${MONGOURI}" --collection=translation --type=csv --fieldFile=fields/translation-fields.txt --out=csv/translation.csv
 mongoexport --uri="${MONGOURI}" --collection=unsaved-edits --type=csv --fieldFile=fields/unsaved-edits-fields.txt --out=csv/unsaved-edits.csv
 mongoexport --uri="${MONGOURI}" --collection=sessiondata --type=csv --fieldFile=fields/sessiondata-fields.txt --out=csv/sessiondata.csv
 mongoexport --uri="${MONGOURI}" --collection=users --type=csv --fieldFile=fields/users-fields.txt --out=csv/users.csv
@@ -43,6 +47,7 @@ mongoexport --uri="${MONGOURI}" --collection=meteor-migrations --type=csv --fiel
 mongoexport --uri="${MONGOURI}" --collection=presences --type=csv --fieldFile=fields/presences-fields.txt --out=csv/presences.csv
 
 echo ".mode csv
+.import csv/accessibilitySettings.csv accessibilitySettings
 .import csv/accountSettings.csv accountSettings
 .import csv/actions.csv actions
 .import csv/activities.csv activities
@@ -56,6 +61,7 @@ echo ".mode csv
 .import csv/cfs_gridfs.attachments.files.csv cfs_gridfs.attachments.files
 .import csv/cfs_gridfs.avatars.files.csv cfs_gridfs.avatars.files
 .import csv/boards.csv boards
+.import csv/cronHistory.csv cronHistory
 .import csv/cards.csv cards
 .import csv/card_comments.csv card_comments
 .import csv/card_comment_reactions.csv card_comment_reactions
@@ -64,6 +70,7 @@ echo ".mode csv
 .import csv/customFields.csv customFields
 .import csv/impersonatedUsers.csv impersonatedUsers
 .import csv/integrations.csv integrations
+.import csv/invitationCodes.csv invitationCodes
 .import csv/lists.csv lists
 .import csv/org.csv org
 .import csv/orgUser.csv orgUser
@@ -73,6 +80,7 @@ echo ".mode csv
 .import csv/tableVisibilityModeSettings.csv tableVisibilityModeSettings
 .import csv/team.csv team
 .import csv/triggers.csv triggers
+.import csv/translation.csv translation
 .import csv/unsaved-edits.csv unsaved-edits
 .import csv/sessiondata.csv sessiondata
 .import csv/users.csv users

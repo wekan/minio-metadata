@@ -7,5 +7,6 @@ createdAt
 sort
 color
 type
+collapsed
 updatedAt
 modifiedAt
