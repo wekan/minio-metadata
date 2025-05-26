@@ -1,5 +1,15 @@
 # Transfer files from MongoDB GridFS to Minio file server, and MongoDB text to SQLite
 
+## MinIO Community version 2.0 is going back to be an object browser only
+
+- https://github.com/minio/object-browser/blob/master/CHANGELOG.md
+- https://news.ycombinator.com/item?id=44093987
+- https://www.reddit.com/r/selfhosted/comments/1kva3pw/avoid_minio_developers_introduce_trojan_horse/
+  - " I dont know what everyone is so upset about. Their commercial licensed version appears to start at only $96,000/year! https://min.io/pricing "
+- Alternatives:
+  - SeaweedFS: https://github.com/seaweedfs/seaweedfs (Apache 2.0)
+  - Zenko: https://github.com/scality/Zenko (Apache 2.0)
+
 ## Introduction
 
 - TLDR:
