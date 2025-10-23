@@ -1,5 +1,12 @@
 # Transfer files from MongoDB GridFS to Minio file server, and MongoDB text to SQLite
 
+## 2025-10-22 MinIO stops distributing free Docker images
+
+- https://github.com/minio/minio/issues/21647#issuecomment-3418675115
+- https://archive.is/4dFK7
+- https://news.ycombinator.com/item?id=45665452
+- https://archive.is/XEYCB
+
 ## MinIO Community version 2.0 is going back to be an object browser only
 
 - https://github.com/minio/object-browser/blob/master/CHANGELOG.md
