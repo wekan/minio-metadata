@@ -1,5 +1,10 @@
 # Transfer files from MongoDB GridFS to Minio file server, and MongoDB text to SQLite
 
+## 2025-10-22 Rust MinIO Alternative
+
+- https://github.com/rustfs/rustfs
+- https://news.ycombinator.com/item?id=45673917
+
 ## 2025-10-22 MinIO stops distributing free Docker images
 
 - https://github.com/minio/minio/issues/21647#issuecomment-3418675115
