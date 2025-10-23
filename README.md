@@ -1,26 +1,31 @@
 # Transfer files from MongoDB GridFS to Minio file server, and MongoDB text to SQLite
 
-## 2025-10-22 Rust MinIO Alternative
+# Minio
 
-- https://github.com/rustfs/rustfs
-- https://news.ycombinator.com/item?id=45673917
-
-## 2025-10-22 MinIO stops distributing free Docker images
-
-- https://github.com/minio/minio/issues/21647#issuecomment-3418675115
-- https://archive.is/4dFK7
-- https://news.ycombinator.com/item?id=45665452
-- https://archive.is/XEYCB
-
-## MinIO Community version 2.0 is going back to be an object browser only
-
-- https://github.com/minio/object-browser/blob/master/CHANGELOG.md
-- https://news.ycombinator.com/item?id=44093987
-- https://www.reddit.com/r/selfhosted/comments/1kva3pw/avoid_minio_developers_introduce_trojan_horse/
-  - " I dont know what everyone is so upset about. Their commercial licensed version appears to start at only $96,000/year! https://min.io/pricing "
-- Alternatives:
-  - SeaweedFS: https://github.com/seaweedfs/seaweedfs (Apache 2.0)
-  - Zenko: https://github.com/scality/Zenko (Apache 2.0)
+- Alternatives
+  - 2025-10-23 OpenMaxIO is a community-maintained fork of MinIO
+    - https://github.com/OpenMaxIO/openmaxio-object-browser
+    - https://news.ycombinator.com/item?id=45684736
+  - 2025-10-22 Rust MinIO Alternative
+    - https://github.com/rustfs/rustfs
+    - https://news.ycombinator.com/item?id=45673917
+- Docker
+  - 2025-10-23 MinIO declines to release Docker builds resolving CVE-2025-62506
+    - https://github.com/minio/minio/issues/21647
+    - https://news.ycombinator.com/item?id=45684035
+  - 2025-10-22 MinIO stops distributing free Docker images
+    - https://github.com/minio/minio/issues/21647#issuecomment-3418675115
+    - https://archive.is/4dFK7
+    - https://news.ycombinator.com/item?id=45665452
+    - https://archive.is/XEYCB
+- MinIO Community version 2.0 is going back to be an object browser only
+  - https://github.com/minio/object-browser/blob/master/CHANGELOG.md
+  - https://news.ycombinator.com/item?id=44093987
+  - https://www.reddit.com/r/selfhosted/comments/1kva3pw/avoid_minio_developers_introduce_trojan_horse/
+    - " I dont know what everyone is so upset about. Their commercial licensed version appears to start at only $96,000/year! https://min.io/pricing "
+  - Alternatives:
+    - SeaweedFS: https://github.com/seaweedfs/seaweedfs (Apache 2.0)
+    - Zenko: https://github.com/scality/Zenko (Apache 2.0)
 
 ## Introduction
 
