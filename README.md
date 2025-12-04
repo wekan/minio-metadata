@@ -2,7 +2,15 @@
 
 # Minio
 
+- MinIO is now in maintenance-mode
+  - https://github.com/minio/minio/commit/27742d469462e1561c776f88ca7a1f26816d69e2
+  - https://archive.is/vs0st
+  - https://news.ycombinator.com/item?id=46136023
+  - https://archive.is/gjbub
 - Alternatives
+  - https://github.com/seaweedfs/seaweedfs
+  - https://garagehq.deuxfleurs.fr
+    - https://github.com/khairul169/garage-webui
   - 2025-10-23 OpenMaxIO is a community-maintained fork of MinIO
     - https://github.com/OpenMaxIO/openmaxio-object-browser
     - https://news.ycombinator.com/item?id=45684736
