@@ -2,6 +2,17 @@
 
 # Minio
 
+- MinIO repository is no longer maintained
+  - https://github.com/minio/minio/commit/7aac2a2c5b7c882e68c1ce017d8256be2feea27f
+  - https://news.ycombinator.com/item?id=47000041
+  - Alternatives:
+    - https://github.com/deuxfleurs-org/garage
+    - https://github.com/rustfs/rustfs
+    - https://github.com/seaweedfs/seaweedfs
+    - https://github.com/supabase/storage
+    - https://github.com/scality/cloudserver
+    - https://github.com/ceph/ceph
+    - AIStor Free https://min.io/download , Full-featured, standalone edition for community use (free license)
 - MinIO is now in maintenance-mode
   - https://github.com/minio/minio/commit/27742d469462e1561c776f88ca7a1f26816d69e2
   - https://archive.is/vs0st
