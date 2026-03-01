@@ -2,6 +2,10 @@
 
 # Minio
 
+- MinIO resurrect
+  - https://blog.vonng.com/en/db/minio-resurrect/
+  - https://github.com/pgsty/minio
+  - https://news.ycombinator.com/item?id=47200342
 - MinIO repository is no longer maintained
   - https://github.com/minio/minio/commit/7aac2a2c5b7c882e68c1ce017d8256be2feea27f
   - https://news.ycombinator.com/item?id=47000041
