@@ -23,6 +23,9 @@
   - https://news.ycombinator.com/item?id=46136023
   - https://archive.is/gjbub
 - Alternatives
+  - Alternatives to MinIO for single-node local S3
+    - https://rmoff.net/2026/01/14/alternatives-to-minio-for-single-node-local-s3/
+    - https://news.ycombinator.com/item?id=49709381
   - https://github.com/seaweedfs/seaweedfs
   - https://garagehq.deuxfleurs.fr
     - https://github.com/khairul169/garage-webui
