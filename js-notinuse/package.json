@@ -1,7 +1,14 @@
 {
+  "scripts": {
+    "postinstall": "node scripts/minio-stream-json3.cjs"
+  },
   "dependencies": {
     "express": "^4.22.3",
     "minio": "^8.0.7",
     "mongodb": "^3.7.3"
+  },
+  "overrides": {
+    "decode-uri-component": "^0.5.1",
+    "stream-json": "^3.9.0"
   }
 }
